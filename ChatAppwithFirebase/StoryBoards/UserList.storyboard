@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="m1x-Na-6Ob">
+            <objects>
+                <navigationController id="tsF-uU-w1Z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KXL-Hr-Gp9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A1F-nI-UWu" kind="relationship" relationship="rootViewController" id="6Hb-KF-iAu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSo-bF-Fli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-822" y="122"/>
+        </scene>
+        <!--User List View Controller-->
+        <scene sceneID="1Al-0M-3Ir">
+            <objects>
+                <viewController storyboardIdentifier="UserListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A1F-nI-UWu" customClass="UserListViewController" customModule="ChatAppwithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sfk-Go-ouh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-65-zPR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" id="zc4-F8-72a" customClass="UserListTableViewCell" customModule="ChatAppwithFirebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zc4-F8-72a" id="7cU-jO-pc2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KNh-d2-78F">
+                                                    <rect key="frame" x="30" y="7.5" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KNh-d2-78F" secondAttribute="height" multiplier="1:1" id="Bpi-8y-fzO"/>
+                                                        <constraint firstAttribute="width" constant="65" id="S1i-E7-6Me"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuJ-tg-IjD">
+                                                    <rect key="frame" x="110" y="29.5" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KNh-d2-78F" firstAttribute="centerY" secondItem="7cU-jO-pc2" secondAttribute="centerY" id="0DI-bj-HKZ"/>
+                                                <constraint firstItem="HuJ-tg-IjD" firstAttribute="centerY" secondItem="7cU-jO-pc2" secondAttribute="centerY" id="KBu-F8-2SW"/>
+                                                <constraint firstItem="KNh-d2-78F" firstAttribute="leading" secondItem="7cU-jO-pc2" secondAttribute="leadingMargin" constant="10" id="pKl-t1-LHw"/>
+                                                <constraint firstItem="HuJ-tg-IjD" firstAttribute="leading" secondItem="KNh-d2-78F" secondAttribute="trailing" constant="15" id="ynb-7L-M9d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userImageView" destination="KNh-d2-78F" id="hlm-Iq-U11"/>
+                                            <outlet property="usernameLabel" destination="HuJ-tg-IjD" id="ggg-HO-gtp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zjw-65-zPR" firstAttribute="top" secondItem="f1N-Sn-1cQ" secondAttribute="top" id="2X4-tP-yOO"/>
+                            <constraint firstItem="f1N-Sn-1cQ" firstAttribute="bottom" secondItem="Zjw-65-zPR" secondAttribute="bottom" id="2aX-TC-ucu"/>
+                            <constraint firstItem="f1N-Sn-1cQ" firstAttribute="trailing" secondItem="Zjw-65-zPR" secondAttribute="trailing" id="5Kp-lS-JAH"/>
+                            <constraint firstItem="Zjw-65-zPR" firstAttribute="leading" secondItem="f1N-Sn-1cQ" secondAttribute="leading" id="jyH-aT-2Sm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f1N-Sn-1cQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sbC-gf-6cZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MNb-Zj-BmT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zck-bY-nol">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="会話を開始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="startChatButton" destination="zck-bY-nol" id="bC4-O6-whC"/>
+                        <outlet property="userListTableView" destination="Zjw-65-zPR" id="DBs-gB-D7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpT-tD-V4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="121.875"/>
+        </scene>
+    </scenes>
+</document>
